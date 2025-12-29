@@ -29,8 +29,16 @@ class Product {
     this._name = name;
   }
 
+  changePrice(price: number) {
+    this._price = price;
+  }
+
   get name() {
     return this._name;
+  }
+
+  get price() {
+    return this._price;
   }
 }
 
