@@ -1,7 +1,7 @@
-import {Customer} from "./entity/customer";
+import {Customer} from "./Domain/Entity/customer";
 import {Address} from "./ValueObject/Address";
-import {Order} from "./entity/order";
-import {OrderItem} from "./entity/order_item";
+import {Order} from "./Domain/Entity/order";
+import {OrderItem} from "./Domain/Entity/order_item";
 
 let customer = new Customer('123', 'Mauricio Ferreira');
 let address = new Address('Teste', '12', 'teste', 'teste')

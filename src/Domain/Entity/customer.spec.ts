@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 import {Customer} from "./customer";
-import {Address} from "../ValueObject/Address";
+import {Address} from "../../ValueObject/Address";
 
 describe("Customer unit tests", () => {
     it('should throw error when id is empty', () => {
