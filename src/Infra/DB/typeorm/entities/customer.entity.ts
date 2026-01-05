@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
+import { OrderEntity } from './order.entity.js';
 
 @Entity('customers')
 export class CustomerEntity {
@@ -25,4 +26,7 @@ export class CustomerEntity {
 
   @Column('real')
   declare rewardPoints: number;
+
+  @OneToMany(() => OrderEntity, (order) => order.customer)
+  declare orders: OrderEntity[];
 }

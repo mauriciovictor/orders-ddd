@@ -31,6 +31,8 @@ class CustomerRepository implements RepositoryInterface<Customer> {
       },
     });
 
+    if (!customerModel) throw new Error('Customer not found');
+
     return customerModel ? this.toEntity(customerModel) : undefined;
   }
 

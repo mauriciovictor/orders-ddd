@@ -5,6 +5,9 @@ import { Product } from '../../Domain/Entity/product.js';
 import { v4 as uuidv4 } from 'uuid';
 import { ProductRepository } from './produc-typeorm.repository.js';
 import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';
+import { OrderItemEntity } from '../DB/typeorm/entities/order-item.entity.js';
+import { OrderEntity } from '../DB/typeorm/entities/order.entity.js';
+import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
 
 let repository: Repository<ProductEntity>;
 
@@ -12,11 +15,14 @@ describe('Product repository test', () => {
   beforeEach(async () => {
     await Typeorm.connect();
 
-    repository = Typeorm.getInstance().getRepository(ProductEntity);
-    await Typeorm.getInstance().synchronize();
+    await Typeorm.getInstance().getRepository(OrderItemEntity).clear();
+    await Typeorm.getInstance().getRepository(OrderEntity).clear();
+    await Typeorm.getInstance().getRepository(ProductEntity).clear();
+    await Typeorm.getInstance().getRepository(CustomerEntity).clear();
 
-    await repository.clear();
+    repository = Typeorm.getInstance().getRepository(ProductEntity);
   }); //iniciar conexão com banco de dados
+
   afterEach(async () => {}); // fechar conexão com banco de dados
 
   it('should save a product', async () => {

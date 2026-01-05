@@ -1,6 +1,8 @@
 import { DataSource } from 'typeorm';
 import { ProductEntity } from './entities/product.entity.js';
 import { CustomerEntity } from './entities/customer.entity.js';
+import { OrderEntity } from './entities/order.entity.js';
+import { OrderItemEntity } from './entities/order-item.entity.js';
 
 class Typeorm {
   private static dataSource: DataSource;
@@ -10,7 +12,7 @@ class Typeorm {
       Typeorm.dataSource = new DataSource({
         type: 'better-sqlite3',
         database: 'orders.db',
-        entities: [ProductEntity, CustomerEntity],
+        entities: [ProductEntity, CustomerEntity, OrderEntity, OrderItemEntity],
         synchronize: true,
       });
     }

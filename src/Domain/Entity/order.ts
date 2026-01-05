@@ -1,4 +1,4 @@
-import type { OrderItem } from './order_item';
+import { OrderItem } from './order_item.js';
 
 class Order {
   private _id: string;
@@ -30,6 +30,22 @@ class Order {
       throw new Error('Order items quantity must be greater than zero');
 
     return true;
+  }
+
+  get customer_id() {
+    return this._customerId;
+  }
+
+  get id() {
+    return this._id;
+  }
+
+  addItem(item: OrderItem) {
+    this._items.push(item);
+  }
+
+  get items() {
+    return this._items;
   }
 
   total(): number {

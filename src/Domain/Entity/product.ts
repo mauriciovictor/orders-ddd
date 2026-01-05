@@ -25,6 +25,10 @@ class Product {
     return true;
   }
 
+  get id() {
+    return this._id;
+  }
+
   changeName(name: string) {
     this._name = name;
   }

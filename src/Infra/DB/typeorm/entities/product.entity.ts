@@ -1,13 +1,14 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
+import { OrderItemEntity } from './order-item.entity.js';
 
 @Entity('products')
 export class ProductEntity {
   @PrimaryColumn('uuid')
-  id: string;
+  declare id: string;
 
   @Column('text')
-  name: string;
+  declare name: string;
 
   @Column('real')
-  price: number;
+  declare price: number;
 }

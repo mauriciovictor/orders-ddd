@@ -6,16 +6,21 @@ import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
 import { CustomerRepository } from './customer-typeorm.repository.js';
 import { Customer } from '../../Domain/Entity/customer.js';
 import { Address } from '../../Domain/ValueObject/Address.js';
+import { OrderItemEntity } from '../DB/typeorm/entities/order-item.entity.js';
+import { OrderEntity } from '../DB/typeorm/entities/order.entity.js';
+import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';
 
 let repository: Repository<CustomerEntity>;
 
 describe('Customer repository test', () => {
   beforeEach(async () => {
     await Typeorm.connect();
+    await Typeorm.getInstance().getRepository(OrderItemEntity).clear();
+    await Typeorm.getInstance().getRepository(OrderEntity).clear();
+    await Typeorm.getInstance().getRepository(ProductEntity).clear();
+    await Typeorm.getInstance().getRepository(CustomerEntity).clear();
 
     repository = Typeorm.getInstance().getRepository(CustomerEntity);
-    await Typeorm.getInstance().synchronize();
-    await repository.clear();
   }); //iniciar conexão com banco de dados
 
   afterEach(async () => {}); // fechar conexão com banco de dados
@@ -82,6 +87,13 @@ describe('Customer repository test', () => {
     const findedProduct = await customerRepository.findById(customer.id);
 
     expect(findedProduct).toStrictEqual(customer);
+  });
+
+  it('should throw an error when customer is not found', async () => {
+    expect(async () => {
+      const customerRepository = new CustomerRepository();
+      await customerRepository.findById('121212');
+    }).rejects.toThrowError('Customer not found');
   });
 
   it('should find all customers', async () => {
