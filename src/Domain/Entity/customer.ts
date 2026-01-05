@@ -10,7 +10,6 @@ class Customer {
   constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
-
     this.validate();
   }
 
@@ -56,6 +55,10 @@ class Customer {
 
   setAddress(address: Address) {
     this._address = address;
+  }
+
+  get address() {
+    return this._address;
   }
 }
 
