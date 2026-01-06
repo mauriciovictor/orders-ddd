@@ -60,6 +60,10 @@ class Customer {
   get address() {
     return this._address;
   }
+
+  changeAddress(address: Address) {
+    this._address = address;
+  }
 }
 
 export { Customer };

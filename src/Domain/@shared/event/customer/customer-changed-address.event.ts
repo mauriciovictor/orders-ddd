@@ -1,6 +1,6 @@
 import EventInterface from '../event.interface.js';
 
-export default class ProductCreatedEvent implements EventInterface {
+export default class CustomerChangedAddressEvent implements EventInterface {
   dateTimeOccurred: Date;
   eventData: any;
 
