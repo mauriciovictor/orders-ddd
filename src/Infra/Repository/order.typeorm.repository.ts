@@ -6,9 +6,8 @@ import { OrderRepositoryInterface } from '../../Domain/Repositoory/order-reposit
 import { OrderItem } from '../../Domain/Entity/order_item.js';
 
 class OrderRepository implements OrderRepositoryInterface {
-  private repository: Repository<OrderEntity>;
-  constructor() {
-    this.repository = Typeorm.getInstance().getRepository(OrderEntity);
+  private get repository(): Repository<OrderEntity> {
+    return Typeorm.manager().getRepository(OrderEntity);
   }
 
   async update(entity: Order): Promise<void> {

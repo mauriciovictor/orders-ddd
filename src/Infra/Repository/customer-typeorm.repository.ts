@@ -6,9 +6,8 @@ import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
 import { Address } from '../../Domain/ValueObject/Address.js';
 
 class CustomerRepository implements RepositoryInterface<Customer> {
-  private repository: Repository<CustomerEntity>;
-  constructor() {
-    this.repository = Typeorm.getInstance().getRepository(CustomerEntity);
+  private get repository(): Repository<CustomerEntity> {
+    return Typeorm.manager().getRepository(CustomerEntity);
   }
 
   async update(entity: Customer): Promise<void> {

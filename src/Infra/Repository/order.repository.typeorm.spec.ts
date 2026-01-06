@@ -11,9 +11,6 @@ import { Product } from '../../Domain/Entity/product.js';
 import { OrderItem } from '../../Domain/Entity/order_item.js';
 import { Order } from '../../Domain/Entity/order.js';
 import { OrderRepository } from './order.typeorm.repository.js';
-import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
-import { OrderItemEntity } from '../DB/typeorm/entities/order-item.entity.js';
-import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';
 
 let repository: Repository<OrderEntity>;
 
@@ -42,19 +39,10 @@ describe('Order repository test', () => {
 
     return { order, customer, orderItem1, orderItem2 };
   };
-  beforeAll(async () => {
-    await Typeorm.connect();
-  });
 
   beforeEach(async () => {
-    await Typeorm.getInstance().getRepository(OrderItemEntity).clear();
-    await Typeorm.getInstance().getRepository(OrderEntity).clear();
-    await Typeorm.getInstance().getRepository(ProductEntity).clear();
-    await Typeorm.getInstance().getRepository(CustomerEntity).clear();
-    repository = Typeorm.getInstance().getRepository(OrderEntity);
-  }); //iniciar conexão com banco de dados
-
-  afterEach(async () => {}); // fechar conexão com banco de dados
+    repository = Typeorm.getInstance().manager.getRepository(OrderEntity);
+  });
 
   it('shoud a update an order', async () => {
     const { order } = await createNewOrder();

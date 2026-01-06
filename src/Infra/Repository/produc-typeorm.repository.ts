@@ -5,9 +5,8 @@ import { Typeorm } from '../DB/typeorm/index.js';
 import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';
 
 class ProductRepository implements RepositoryInterface<Product> {
-  private repository: Repository<ProductEntity>;
-  constructor() {
-    this.repository = Typeorm.getInstance().getRepository(ProductEntity);
+  private get repository(): Repository<ProductEntity> {
+    return Typeorm.manager().getRepository(ProductEntity);
   }
 
   async update(entity: Product): Promise<void> {

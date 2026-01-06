@@ -19,6 +19,7 @@ export class OrderEntity {
 
   @OneToMany(() => OrderItemEntity, (item) => item.order, {
     cascade: ['update', 'insert'],
+    orphanedRowAction: 'delete',
   })
   declare items: OrderItemEntity[];
 }
