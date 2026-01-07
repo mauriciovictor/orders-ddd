@@ -1,9 +1,9 @@
 import { Repository } from 'typeorm';
-import { Typeorm } from '../DB/typeorm/index.js';
-import { Order } from '../../Domain/checkout/entity/order.js';
-import { OrderEntity } from '../DB/typeorm/entities/order.entity.js';
-import { OrderRepositoryInterface } from '../../Domain/checkout/repository/order-repositoriy.interface.js';
-import { OrderItem } from '../../Domain/checkout/entity/order_item.js';
+import { Typeorm } from '../../db/typeorm/index.js';
+import { Order } from '../../../Domain/checkout/entity/order.js';
+import { OrderEntity } from './typeorm/entity/order.entity.js';
+import { OrderRepositoryInterface } from '../../../Domain/checkout/repository/order-repositoriy.interface.js';
+import { OrderItem } from '../../../Domain/checkout/entity/order_item.js';
 
 class OrderRepository implements OrderRepositoryInterface {
   private get repository(): Repository<OrderEntity> {

@@ -1,8 +1,8 @@
 import { DataSource, EntityManager } from 'typeorm';
-import { ProductEntity } from './entities/product.entity.js';
-import { CustomerEntity } from './entities/customer.entity.js';
-import { OrderEntity } from './entities/order.entity.js';
-import { OrderItemEntity } from './entities/order-item.entity.js';
+import { ProductEntity } from '../../product/repository/typeorm/entity/product.entity.js';
+import { CustomerEntity } from '../../costumer/repository/typeorm/entity/customer.entity.js';
+import { OrderEntity } from '../../checkout/repository/typeorm/entity/order.entity.js';
+import { OrderItemEntity } from '../../checkout/repository/typeorm/entity/order-item.entity.js';
 
 class Typeorm {
   private static dataSource: DataSource;

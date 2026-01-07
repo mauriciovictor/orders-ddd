@@ -1,5 +1,5 @@
 import { beforeEach, beforeAll, afterEach, afterAll } from 'vitest';
-import { Typeorm } from '../DB/typeorm/index.js';
+import { Typeorm } from './db/typeorm/index.js';
 import { QueryRunner } from 'typeorm';
 
 let queryRunner: QueryRunner;

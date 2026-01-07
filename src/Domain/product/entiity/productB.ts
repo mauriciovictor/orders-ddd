@@ -1,6 +1,6 @@
 import ProductInterface from './product.interface.js';
 
-class Product implements ProductInterface {
+class ProductB implements ProductInterface {
   _id: string;
   _name: string;
   _price: number;
@@ -44,8 +44,8 @@ class Product implements ProductInterface {
   }
 
   get price() {
-    return this._price;
+    return this._price * 2;
   }
 }
 
-export { Product };
+export { ProductB };

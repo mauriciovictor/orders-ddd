@@ -8,6 +8,6 @@ export default defineConfig({
       concurrent: false,
     },
     root: './src',
-    setupFiles: ['./src/Infra/Repository/typeorm.setup.ts'],
+    setupFiles: ['./src/Infra/typeorm.setup.ts'],
   },
 });

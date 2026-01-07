@@ -1,8 +1,8 @@
-import { RepositoryInterface } from '../../Domain/@shared/repository/repository-interface.js';
-import { Product } from '../../Domain/product/entiity/product.js';
+import { RepositoryInterface } from '../../../../Domain/@shared/repository/repository-interface.js';
+import { Product } from '../../../../Domain/product/entiity/product.js';
 import { Repository } from 'typeorm';
-import { Typeorm } from '../DB/typeorm/index.js';
-import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';
+import { Typeorm } from '../../../db/typeorm/index.js';
+import { ProductEntity } from './entity/product.entity.js';
 
 class ProductRepository implements RepositoryInterface<Product> {
   private get repository(): Repository<ProductEntity> {

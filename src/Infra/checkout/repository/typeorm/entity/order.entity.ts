@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
-import { CustomerEntity } from './customer.entity.js';
+import { CustomerEntity } from '../../../../costumer/repository/typeorm/entity/customer.entity.js';
 import { OrderItemEntity } from './order-item.entity.js';
 
 @Entity('orders')

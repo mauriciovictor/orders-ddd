@@ -1,11 +1,11 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { Typeorm } from '../DB/typeorm/index.js';
+import { Typeorm } from '../../../db/typeorm/index.js';
 import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
+import { CustomerEntity } from './entity/customer.entity.js';
 import { CustomerRepository } from './customer-typeorm.repository.js';
-import { Customer } from '../../Domain/customer/entity/customer.js';
-import { Address } from '../../Domain/customer/ValueObject/Address.js';
+import { Customer } from '../../../../Domain/customer/entity/customer.js';
+import { Address } from '../../../../Domain/customer/ValueObject/Address.js';
 
 let repository: Repository<CustomerEntity>;
 
