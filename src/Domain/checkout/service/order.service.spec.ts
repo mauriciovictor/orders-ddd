@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { Order } from '../Entity/order';
-import { OrderItem } from '../Entity/order_item';
-import { OrderService } from './order.service';
-import { Customer } from '../Entity/customer';
+import { Order } from '../entity/order.js';
+import { OrderItem } from '../entity/order_item.js';
+import { OrderService } from './order.service.js';
+import { Customer } from '../../customer/entity/customer.js';
 
 describe('Order Service unit tests', () => {
   it('should place an order', () => {

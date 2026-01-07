@@ -1,6 +1,6 @@
-import { Order } from '../Entity/order';
-import { Customer } from '../Entity/customer';
-import { OrderItem } from '../Entity/order_item';
+import { Order } from '../entity/order.js';
+import { Customer } from '../../customer/entity/customer.js';
+import { OrderItem } from '../entity/order_item.js';
 import { v4 as uuidv4 } from 'uuid';
 
 class OrderService {

@@ -4,12 +4,12 @@ import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import { OrderEntity } from '../DB/typeorm/entities/order.entity.js';
 import { CustomerRepository } from './customer-typeorm.repository.js';
-import { Customer } from '../../Domain/Entity/customer.js';
-import { Address } from '../../Domain/ValueObject/Address.js';
+import { Customer } from '../../Domain/customer/entity/customer.js';
+import { Address } from '../../Domain/customer/ValueObject/Address.js';
 import { ProductRepository } from './produc-typeorm.repository.js';
-import { Product } from '../../Domain/Entity/product.js';
-import { OrderItem } from '../../Domain/Entity/order_item.js';
-import { Order } from '../../Domain/Entity/order.js';
+import { Product } from '../../Domain/product/entiity/product.js';
+import { OrderItem } from '../../Domain/checkout/entity/order_item.js';
+import { Order } from '../../Domain/checkout/entity/order.js';
 import { OrderRepository } from './order.typeorm.repository.js';
 
 let repository: Repository<OrderEntity>;

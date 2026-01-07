@@ -4,8 +4,8 @@ import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
 import { CustomerRepository } from './customer-typeorm.repository.js';
-import { Customer } from '../../Domain/Entity/customer.js';
-import { Address } from '../../Domain/ValueObject/Address.js';
+import { Customer } from '../../Domain/customer/entity/customer.js';
+import { Address } from '../../Domain/customer/ValueObject/Address.js';
 
 let repository: Repository<CustomerEntity>;
 

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Typeorm } from '../DB/typeorm/index.js';
-import { Product } from '../../Domain/Entity/product.js';
+import { Product } from '../../Domain/product/entiity/product.js';
 import { v4 as uuidv4 } from 'uuid';
 import { ProductRepository } from './produc-typeorm.repository.js';
 import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';

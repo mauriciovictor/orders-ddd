@@ -1,4 +1,4 @@
-import EventHandlerInterface from '../../event-handler.interface.js';
+import EventHandlerInterface from '../../../@shared/event/event-handler.interface.js';
 import CostumerCreatedEvent from '../costumer-created.event.js';
 
 export class EnviarConsoleLogHandle2Handler implements EventHandlerInterface<CostumerCreatedEvent> {

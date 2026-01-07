@@ -1,6 +1,6 @@
-import EventHandlerInterface from '../../event-handler.interface.js';
+import EventHandlerInterface from '../../../@shared/event/event-handler.interface.js';
 import CustomerChangedAddressEvent from '../customer-changed-address.event.js';
-import { Customer } from '../../../../Entity/customer.js';
+import { Customer } from '../../entity/customer.js';
 
 export class SendEmailWhenUserChangedAdressHandler implements EventHandlerInterface<CustomerChangedAddressEvent> {
   handle(event: CustomerChangedAddressEvent): void {

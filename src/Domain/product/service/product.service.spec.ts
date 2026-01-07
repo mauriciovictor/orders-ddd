@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { Product } from '../Entity/product';
-import { ProductService } from './product.service';
+import { Product } from '../entiity/product.js';
+import { ProductService } from './product.service.js';
 
 describe('Product Service unit tests', () => {
   it('should chane the prices of all products', () => {

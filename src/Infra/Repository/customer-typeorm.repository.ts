@@ -1,9 +1,9 @@
-import { RepositoryInterface } from '../../Domain/Repositoory/repository-interface.js';
+import { RepositoryInterface } from '../../Domain/@shared/repository/repository-interface.js';
 import { Repository } from 'typeorm';
 import { Typeorm } from '../DB/typeorm/index.js';
-import { Customer } from '../../Domain/Entity/customer.js';
+import { Customer } from '../../Domain/customer/entity/customer.js';
 import { CustomerEntity } from '../DB/typeorm/entities/customer.entity.js';
-import { Address } from '../../Domain/ValueObject/Address.js';
+import { Address } from '../../Domain/customer/ValueObject/Address.js';
 
 class CustomerRepository implements RepositoryInterface<Customer> {
   private get repository(): Repository<CustomerEntity> {

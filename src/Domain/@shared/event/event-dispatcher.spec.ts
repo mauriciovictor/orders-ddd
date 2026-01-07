@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import EventDispatcher from './event-dispatcher.js';
-import { SendEmailWhenProductIsCreatedHandler } from './product/handler/send-email-when-product-is-created.handler.js';
-import ProductCreatedEvent from './product/product-created.event.js';
+import { SendEmailWhenProductIsCreatedHandler } from '../../product/event/handler/send-email-when-product-is-created.handler.js';
+import ProductCreatedEvent from '../../product/event/product-created.event.js';
 
 describe('Domain event tests', () => {
   it('should regiister an event handler', () => {

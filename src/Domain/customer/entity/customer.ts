@@ -1,4 +1,4 @@
-import type { Address } from '../ValueObject/Address';
+import type { Address } from '../ValueObject/Address.js';
 
 class Customer {
   private _id: string;

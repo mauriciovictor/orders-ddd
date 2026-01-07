@@ -1,5 +1,5 @@
-import { RepositoryInterface } from '../../Domain/Repositoory/repository-interface.js';
-import { Product } from '../../Domain/Entity/product.js';
+import { RepositoryInterface } from '../../Domain/@shared/repository/repository-interface.js';
+import { Product } from '../../Domain/product/entiity/product.js';
 import { Repository } from 'typeorm';
 import { Typeorm } from '../DB/typeorm/index.js';
 import { ProductEntity } from '../DB/typeorm/entities/product.entity.js';

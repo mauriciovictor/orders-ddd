@@ -1,11 +1,11 @@
 import { describe, expect, it, vi } from 'vitest';
-import { Customer } from '../../../Entity/customer.js';
-import { Address } from '../../../ValueObject/Address.js';
-import EventDispatcher from '../event-dispatcher.js';
+import { Customer } from '../entity/customer.js';
+import { Address } from '../ValueObject/Address.js';
+import EventDispatcher from '../../@shared/event/event-dispatcher.js';
 import { EnviarConsoleLogHandle1Handler } from './handler/enviar-console-log-handle1.handler.js';
 import CostumerCreatedEvent from './costumer-created.event.js';
 import { EnviarConsoleLogHandle2Handler } from './handler/enviar-console-log-handle2.handler.js';
-import { SendEmailWhenProductIsCreatedHandler } from '../product/handler/send-email-when-product-is-created.handler.js';
+import { SendEmailWhenProductIsCreatedHandler } from '../../product/event/handler/send-email-when-product-is-created.handler.js';
 import CustomerChangedAddressEvent from './customer-changed-address.event.js';
 import { SendEmailWhenUserChangedAdressHandler } from './handler/send-email-when-user-changed-adress.handler.js';
 

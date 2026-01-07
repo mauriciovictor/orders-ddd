@@ -1,4 +1,4 @@
-import { Product } from '../Entity/product';
+import { Product } from '../entiity/product.js';
 
 class ProductService {
   static increasePrices(products: Product[], percentage: number): void {
